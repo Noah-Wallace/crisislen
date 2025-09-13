@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react'
+import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { Line, Bar, Doughnut } from 'react-chartjs-2'
 import {

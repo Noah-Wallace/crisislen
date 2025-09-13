@@ -1,42 +1,97 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for CrisisLens AI */
+html, body {
+  @apply antialiased;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.leaflet-container {
+  @apply h-full w-full;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Alert status colors */
+.status-critical {
+  @apply text-red-600 border-red-600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.status-high {
+  @apply text-orange-600 border-orange-600;
 }
 
-.card {
-  padding: 2em;
+.status-medium {
+  @apply text-yellow-600 border-yellow-600;
 }
 
-.read-the-docs {
-  color: #888;
+.status-low {
+  @apply text-green-600 border-green-600;
+}
+
+/* Map marker customizations */
+.map-marker-critical {
+  @apply animate-pulse bg-red-500;
+}
+
+.map-marker-high {
+  @apply bg-orange-500;
+}
+
+.map-marker-medium {
+  @apply bg-yellow-500;
+}
+
+.map-marker-low {
+  @apply bg-green-500;
+}
+
+/* Custom scrollbar for overflow content */
+.custom-scrollbar {
+  @apply scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent;
+}
+
+/* Loading spinner animation */
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.loading-spinner {
+  @apply border-t-2 border-blue-600;
+  animation: spinner 0.6s linear infinite;
+}
+
+/* Chart container styling */
+.chart-container {
+  @apply bg-white rounded-lg shadow-sm p-4;
+  min-height: 300px;
+}
+
+/* Priority event badge styling */
+.priority-badge {
+  @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+}
+
+.priority-badge-critical {
+  @apply bg-red-100 text-red-800;
+}
+
+.priority-badge-high {
+  @apply bg-orange-100 text-orange-800;
+}
+
+.priority-badge-medium {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.priority-badge-low {
+  @apply bg-green-100 text-green-800;
+}
+
+/* Dashboard card hover effects */
+.dashboard-card {
+  @apply transition-transform duration-200 ease-in-out;
+}
+
+.dashboard-card:hover {
+  @apply transform -translate-y-1;
 }

@@ -339,4 +339,7 @@ export class DataAggregator {
       totalEvents: analyzedData.length,
       typeCounts,
       locationCounts,
-      sourc
+      sourceCounts
+    };
+  }
+}
