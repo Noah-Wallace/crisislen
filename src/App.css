@@ -1,8 +1,154 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Custom styles for CrisisLens AI */
+:root {
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-800: #991b1b;
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  --color-orange-800: #9a3412;
+  --color-yellow-500: #eab308;
+  --color-yellow-600: #ca8a04;
+  --color-yellow-800: #854d0e;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-800: #166534;
+  --color-blue-600: #2563eb;
+  --color-gray-300: #d1d5db;
+}
+
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Alert status colors */
+.status-critical {
+  color: var(--color-red-600);
+  border-color: var(--color-red-600);
+}
+
+.status-high {
+  color: var(--color-orange-600);
+  border-color: var(--color-orange-600);
+}
+
+.status-medium {
+  color: var(--color-yellow-600);
+  border-color: var(--color-yellow-600);
+}
+
+.status-low {
+  color: var(--color-green-600);
+  border-color: var(--color-green-600);
+}
+
+/* Map marker customizations */
+.map-marker-critical {
+  background-color: var(--color-red-500);
+  animation: pulse 2s infinite;
+}
+
+.map-marker-high {
+  background-color: var(--color-orange-500);
+}
+
+.map-marker-medium {
+  background-color: var(--color-yellow-500);
+}
+
+.map-marker-low {
+  background-color: var(--color-green-500);
+}
+
+/* Custom scrollbar for overflow content */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gray-300) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-300);
+  border-radius: 3px;
+}
+
+/* Loading spinner animation */
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.loading-spinner {
+  border-top: 2px solid var(--color-blue-600);
+  border-right: 2px solid transparent;
+  border-radius: 50%;
+  animation: spinner 0.6s linear infinite;
+}
+
+/* Chart container styling */
+.chart-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  min-height: 300px;
+}
+
+/* Priority event badge styling */
+.priority-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.priority-badge-critical {
+  background-color: #fee2e2;
+  color: var(--color-red-800);
+}
+
+.priority-badge-high {
+  background-color: #ffedd5;
+  color: var(--color-orange-800);
+}
+
+.priority-badge-medium {
+  background-color: #fef3c7;
+  color: var(--color-yellow-800);
+}
+
+.priority-badge-low {
+  background-color: #d1fae5;
+  color: var(--color-green-800);
+}
+
+/* Dashboard card hover effects */
+.dashboard-card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+}
 html, body {
   @apply antialiased;
 }

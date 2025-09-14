@@ -1,5 +1,6 @@
 import React from 'react'
 import { format } from 'date-fns'
+import '../styles/CrisisDetails.css'
 import {
   ExclamationTriangleIcon,
   InformationCircleIcon,
